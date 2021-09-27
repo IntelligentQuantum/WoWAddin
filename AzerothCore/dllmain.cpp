@@ -35,10 +35,11 @@ void PtrCheck()
 // Enable Console
 void EnableConsole()
 {
-    *reinterpret_cast<DWORD*>(ENABLE_CONSOLE_ADDR) = 1;	
+    *reinterpret_cast<DWORD*>(ENABLE_CONSOLE_ADDR) = 1;
 }
 
 void Commands()
 {
     Console::RegisterCommand("GuildLeave", GuildLeave, CATEGORY_CONSOLE, "Usage : GuildLeave");
+    Console::RegisterCommand("Inventory", Inventory, CATEGORY_CONSOLE, "Usage : Inventory [Target]");
 }

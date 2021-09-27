@@ -1,10 +1,4 @@
 ﻿#include "stdafx.h"
-#include <sstream>
-#include <list>
-#include <vector>
-#include <map>
-#include <iostream>
-#include <stdio.h>
 
 UINT64 GetTargetGUID()
 {
@@ -38,6 +32,22 @@ BOOL Inventory(char const*, char const* /* args */)
     Packet2.PutInt64(GetTargetGUID());
     Packet2.Finalize();
     ClientServices::SendPacket(&Packet2);
+
+    Console::Write("Packet Sent", ECHO_COLOR);
+    return true;
+}
+
+BOOL UpdateTicket(char const*, char const* args)
+{
+    int Count = atoi(args);
+
+    for (int i = 0; i <= Count; i++)
+    {
+        CDataStore Data(CMSG_GMTICKET_UPDATETEXT);
+        Data.PutString("|cFFDDD000|Hquest:|hAzerothCorer|h|r");
+        Data.Finalize();
+        ClientServices::SendPacket(&Data);
+    }
 
     Console::Write("Packet Sent", ECHO_COLOR);
     return true;

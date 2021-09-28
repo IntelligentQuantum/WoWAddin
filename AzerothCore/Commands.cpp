@@ -52,3 +52,16 @@ BOOL UpdateTicket(char const*, char const* args)
     Console::Write("Packet Sent", ECHO_COLOR);
     return true;
 }
+
+BOOL Away(char const*, char const* args)
+{
+    CDataStore Packet(CMSG_MESSAGECHAT);
+    Packet.PutInt32(23);
+    Packet.PutInt32(0);
+    Packet.PutString(args);
+    Packet.Finalize();
+    ClientServices::SendPacket(&Packet);
+
+    Console::Write("Packet Sent", ECHO_COLOR);
+    return true;
+}

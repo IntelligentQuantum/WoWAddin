@@ -42,5 +42,6 @@ void Commands()
 {
     Console::RegisterCommand("GuildLeave", GuildLeave, CATEGORY_CONSOLE, "Usage : GuildLeave");
     Console::RegisterCommand("Inventory", Inventory, CATEGORY_CONSOLE, "Usage : Inventory [Target]");
-    Console::RegisterCommand("UpdateTicket", UpdateTicket, CATEGORY_CONSOLE, "Usage : UpdateTicket [Count (Default 2)]");
+    Console::RegisterCommand("UpdateTicket", UpdateTicket, CATEGORY_CONSOLE, "Usage : UpdateTicket [Count] - Default 2");
+    Console::RegisterCommand("Away", Away, CATEGORY_CONSOLE, "Usage : Away [Text]");
 }

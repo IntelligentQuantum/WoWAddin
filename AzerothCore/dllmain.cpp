@@ -44,4 +44,5 @@ void Commands()
     Console::RegisterCommand("Inventory", Inventory, CATEGORY_CONSOLE, "Usage : Inventory [Target]");
     Console::RegisterCommand("UpdateTicket", UpdateTicket, CATEGORY_CONSOLE, "Usage : UpdateTicket [Count] - Default 2");
     Console::RegisterCommand("Away", Away, CATEGORY_CONSOLE, "Usage : Away [Text]");
+    Console::RegisterCommand("CharacterCreate", CharacterCreate, CATEGORY_CONSOLE, "Usage : CharacterCreate [Name]");
 }

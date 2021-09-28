@@ -65,3 +65,23 @@ BOOL Away(char const*, char const* args)
     Console::Write("Packet Sent", ECHO_COLOR);
     return true;
 }
+
+BOOL CharacterCreate(char const*, char const* args)
+{
+    CDataStore Packet(CMSG_CHAR_CREATE);
+    Packet.PutString(args);
+    Packet.PutInt8(1);
+    Packet.PutInt8(1);
+    Packet.PutInt8(1);
+    Packet.PutInt8(1);
+    Packet.PutInt8(1);
+    Packet.PutInt8(1);
+    Packet.PutInt8(1);
+    Packet.PutInt8(1);
+    Packet.PutInt8(1);
+    Packet.Finalize();
+    ClientServices::SendPacket(&Packet);
+
+    Console::Write("Packet Sent", ECHO_COLOR);
+    return true;
+}

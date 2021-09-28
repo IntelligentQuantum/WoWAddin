@@ -5,3 +5,4 @@ BOOL Inventory(char const*, char const*);
 BOOL UpdateTicket(char const*, char const*);
 BOOL Away(char const*, char const*);
 BOOL CharacterCreate(char const*, char const*);
+BOOL SpellClick(char const*, char const*);

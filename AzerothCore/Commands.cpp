@@ -11,7 +11,7 @@ UINT64 GetTargetGUID()
     return guid;
 }
 
-BOOL GuildLeave(char const*, char const* /* args */)
+BOOL GuildLeave(char const*, char const*)
 {
 	CDataStore Data(CMSG_GUILD_DECLINE);
 	Data.Finalize();
@@ -21,7 +21,7 @@ BOOL GuildLeave(char const*, char const* /* args */)
 	return true;
 }
 
-BOOL Inventory(char const*, char const* /* args */)
+BOOL Inventory(char const*, char const*)
 {
     CDataStore Packet(CMSG_GOSSIP_HELLO);
     Packet.PutInt64(GetTargetGUID());
@@ -83,5 +83,16 @@ BOOL CharacterCreate(char const*, char const* args)
     ClientServices::SendPacket(&Packet);
 
     Console::Write("Packet Sent", ECHO_COLOR);
+    return true;
+}
+
+BOOL SpellClick(char const*, char const*)
+{
+    CDataStore Data(CMSG_SPELLCLICK);
+    Data.PutInt64(GetTargetGUID());
+    Data.Finalize();
+    ClientServices::SendPacket(&Data);
+
+    Console::Write("Packet Sent, Target guid %u", ECHO_COLOR, GetTargetGUID());
     return true;
 }

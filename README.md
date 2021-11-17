@@ -6,3 +6,4 @@
 - [X] [SpellClick](https://github.com/azerothcore/azerothcore-wotlk/pull/8232)
 - [ ] Inventory
 - [ ] CharacterCreate
+- [X] [DuelAccept](https://github.com/azerothcore/azerothcore-wotlk/pull/8232)

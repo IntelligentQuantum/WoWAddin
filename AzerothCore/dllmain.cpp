@@ -46,4 +46,5 @@ void Commands()
     Console::RegisterCommand("Away", Away, CATEGORY_CONSOLE, "Usage : Away [Text]");
     Console::RegisterCommand("CharacterCreate", CharacterCreate, CATEGORY_CONSOLE, "Usage : CharacterCreate [Name]");
     Console::RegisterCommand("SpellClick", SpellClick, CATEGORY_CONSOLE, "Usage : SpellClick [Target Vehicle]");
+    Console::RegisterCommand("DuelAccept", DuelAccept, CATEGORY_CONSOLE, "Usage : DuelAccept [Count]");
 }

@@ -96,3 +96,25 @@ BOOL SpellClick(char const*, char const*)
     Console::Write("Packet Sent, Target guid %u", ECHO_COLOR, GetTargetGUID());
     return true;
 }
+
+BOOL DuelAccept(char const*, char const* String)
+{
+	long Count = atoi(String);
+
+	if (Count <= 0)
+		Count += 1;
+
+	for (long A = 0; A < Count; ++A)
+	{
+		if (Delay > 1)
+			Sleep(Delay);
+
+		CDataStore Data(CMSG_DUEL_ACCEPTED);
+		Data.PutInt64(GetTargetGuid());
+		Data.Finalize();
+		ClientServices::SendPacket(&Data);
+	}
+
+	Console::Write("Packet Sent %u Times", ECHO_COLOR, Count);
+	return true;
+}
